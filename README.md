@@ -1,1 +1,2 @@
 # img-slider
+## Bug Fixing

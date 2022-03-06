@@ -49,6 +49,11 @@ const selectItem = (event, img) => {
 }
 var timer
 const createSlider = () => {
+  const duration = document.getElementById('duration').value || 1000;
+  if (duration < 0 && !isNaN(duration)) {
+    alert('Positive number for Interval');
+    return;
+  }
   // check slider image length
   if (sliders.length < 2) {
     alert('Select at least 2 image.')
@@ -67,7 +72,7 @@ const createSlider = () => {
   document.querySelector('.main').style.display = 'block';
   // hide image aria
   imagesArea.style.display = 'none';
-  const duration = document.getElementById('duration').value || 1000;
+
   sliders.forEach(slide => {
     let item = document.createElement('div')
     item.className = "slider-item";
