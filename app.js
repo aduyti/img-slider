@@ -47,7 +47,8 @@ const selectItem = (event, img) => {
     alert('Hey, Already added !')
   }
 }
-var timer
+var timer;
+
 const createSlider = () => {
   const duration = document.getElementById('duration').value || 1000;
   if (duration < 0 && !isNaN(duration)) {
@@ -124,4 +125,10 @@ searchBtn.addEventListener('click', function () {
 
 sliderBtn.addEventListener('click', function () {
   createSlider()
+})
+
+document.getElementById('search').addEventListener('keypress', (event) => {
+  if (event.keyCode === 13) {
+    searchBtn.click();
+  }
 })
