@@ -128,7 +128,7 @@ sliderBtn.addEventListener('click', function () {
 })
 
 document.getElementById('search').addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
+  if (event.key === 'Enter') {
     searchBtn.click();
   }
 })
